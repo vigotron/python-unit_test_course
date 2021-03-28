@@ -32,6 +32,6 @@ class PhoneBook:
         return value_list
 
     def remove_by_name(self, name_to_remove):
-        for name, number in self.number.items():
+        for name, number in list(self.number.items()):
             if name == name_to_remove:
                 del self.number[name_to_remove]

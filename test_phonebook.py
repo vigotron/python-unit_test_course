@@ -42,9 +42,9 @@ class MyTestCase(unittest.TestCase):
         self.assertIn("John", self.phonebook.get_names())
         self.assertIn("33344455", self.phonebook.get_numbers())
 
-    # def test_remove_phonebook_number(self):
-    #     self.phonebook.add("John", "33344455")
-    #     self.phonebook.add("Ben", "33347864")
-    #     self.phonebook.remove_by_name("John")
-    #     self.assertNotIn("John", self.phonebook.get_names())
-    #     self.assertIn("Ben", self.phonebook.get_names())
+    def test_remove_phonebook_number(self):
+        self.phonebook.add("John", "33344455")
+        self.phonebook.add("Ben", "33347864")
+        self.phonebook.remove_by_name("John")
+        self.assertNotIn("John", self.phonebook.get_names())
+        self.assertIn("Ben", self.phonebook.get_names())
