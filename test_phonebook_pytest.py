@@ -1,27 +1,11 @@
 import pytest
 
-
-class Phonebook:
-
-    def __init__(self):
-        self.number = {}
-
-    def add(self, name, number):
-        self.number[name] = number
-
-    def find(self, name):
-        return self.number[name]
-
-    def get_names(self):
-        return set(self.number.keys())
-
-    def clear(self):
-        pass
+from phonebook2 import Phonebook2
 
 
 @pytest.fixture()
 def phonebook():
-    return Phonebook()
+    return Phonebook2()
 
 
 def test_lookup_by_name(phonebook):
