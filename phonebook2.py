@@ -1,7 +1,12 @@
+import os
+
+
 class Phonebook2:
 
-    def __init__(self):
+    def __init__(self, cache_folder):
         self.number = {}
+        self.fileName = os.path.join(cache_folder, "cache.txt")
+        self.cache = open(self.fileName, "w")
 
     def add(self, name, number):
         self.number[name] = number
@@ -13,4 +18,5 @@ class Phonebook2:
         return set(self.number.keys())
 
     def clear(self):
-        pass
+        self.cache.close()
+        os.remove(self.fileName)

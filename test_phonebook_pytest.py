@@ -4,8 +4,12 @@ from phonebook2 import Phonebook2
 
 
 @pytest.fixture()
-def phonebook():
-    return Phonebook2()
+def phonebook(tmpdir):
+    "Provides a temporary Phonebook"
+    "pytest --fixtures"
+    return Phonebook2(tmpdir)
+    #yield phonebook
+    #phonebook.clear()
 
 
 def test_lookup_by_name(phonebook):

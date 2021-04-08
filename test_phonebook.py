@@ -5,7 +5,7 @@ from phonebook import PhoneBook
 
 class MyTestCase(unittest.TestCase):
 
-    def setUp(self) -> None:
+    def setUp(self):
         self.phonebook = PhoneBook()
 
     def test_find_number_by_name(self):
