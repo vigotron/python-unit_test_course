@@ -24,6 +24,9 @@ class PhoneBook:
         for names in self.number.keys():
             key_list.append(names)
         return key_list
+    
+    def get_names2(self):
+        return set(self.number.keys())
 
     def get_numbers(self):
         value_list = []
