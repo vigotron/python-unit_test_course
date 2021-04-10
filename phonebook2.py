@@ -17,6 +17,15 @@ class Phonebook2:
     def get_names(self):
         return set(self.number.keys())
 
+    def is_consistent(self):
+        for name1, number1 in self.number.items():
+            for name2, number2 in self.number.items():
+                if name1 == name2:
+                    continue
+                if number1.startswith(number2):
+                    return False
+            return True
+
     def clear(self):
         self.cache.close()
         os.remove(self.fileName)
